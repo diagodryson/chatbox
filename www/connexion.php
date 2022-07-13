@@ -1,5 +1,7 @@
 <!-- espace ADMIN -->
 <?php
+/* permet d'échanger des informations sur toutes les pages 1/2 */
+session_start();
 /* lorsque l'utiliser cliquer sur le code, il exécute le code */
 if(isset($_POST['valider'])){
     /* test */
@@ -11,7 +13,9 @@ if(isset($_POST['valider'])){
 
     /* vérifier si par défaut corresponde bien au saisi */
     if($pseudo_saisi == $pseudo_par_defaut AND $mdp_saisi == $mdp_par_defaut){
-
+        /* vérifier si l'utilisateur est bien connecté */
+        $_SESSION['mdp'] = $mdp_saisi;
+        header('Location: index.php');
     }else{
         echo "votre mot de passe ou pseudo est incorrect..";
     }
