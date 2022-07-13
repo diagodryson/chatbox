@@ -5,7 +5,7 @@ if(isset($_POST['valider'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
 
     }else{
-        echo "T'as oublié de compléter tous les champs.."
+        echo "T'as oublié de compléter tous les champs..";
     }
 }
 ?>
